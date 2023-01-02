@@ -25,22 +25,19 @@ void merge(int a[], int na, int b[], int nb, int c[])
         c[ic] = b[ib];
 }
 
-void merge_sort(int a[], int n)
-{
-    if(n==1) return;
-    merge_sort(a, n/2);
-    merge_sort(a+n/2, n-n/2);
-    int *p=(int *)malloc(sizeof(int)*n);
-    merge(a, n/2, a+n/2, n-n/2, p);
-    for(int i=0; i<n; i++) a[i]=p[i];
-    free(p);
-}
+/* time complexity:
+    for a: na iterations
+    for b: nb iterations
+    in total: theta(na+nb)
+*/
 
 int main(void)
 {
-    int a[9] = {9,4,8,5,6,7,2,3,1};
-    merge_sort(a, 9);
+    int a[5] = {1,3,5,7,9};
+    int b[4] = {2,4,6,8};
+    int c[9];
+    merge(a, 5, b, 4, c);
     for (int i = 0; i < 9; i++)
-        printf("%i\n", a[i]);
+        printf("%i\n", c[i]);
     return 0;
 }
