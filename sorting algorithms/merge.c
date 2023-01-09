@@ -28,7 +28,7 @@ void merge(int a[], int na, int b[], int nb, int c[])
 /* time complexity:
     for a: na iterations
     for b: nb iterations
-    in total: theta(na+nb)
+    in total: theta(na+nb) = theta(n)
 */
 
 int main(void)
