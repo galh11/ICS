@@ -44,3 +44,5 @@ int main(void)
         printf("%i\n", a[i]);
     return 0;
 }
+
+memcpy(destination, source, ammount of bites);
